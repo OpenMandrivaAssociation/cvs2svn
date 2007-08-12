@@ -2,25 +2,28 @@
 %define version	1.3.1
 %define release	%mkrel 3
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
-License:	BSD
-Group:		Development/Other
-Summary:	Convert CVS repositories to Subversion repositories
-Source0:        http://cvs2svn.tigris.org/files/documents/1462/15996/%{name}-%{version}.tar.bz2
-Url:		http://cvs2svn.tigris.org/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-# for testing 
+Name: cvs2svn
+Version: 1.5.1
+Release: %mkrel 1
+License: BSD
+Group: Development/Other
+Summary: Convert CVS repositories to Subversion repositories
+Source0: http://cvs2svn.tigris.org/files/documents/1462/15996/%{name}-%{version}.tar.gz
+Url: http://cvs2svn.tigris.org/
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: locales-en
 BuildRequires: python 
-BuildRequires: subversion subversion-tools
-BuildRequires: cvs rcs
-Requires:	python 
-Requires:	subversion subversion-tools
-Requires:	cvs	rcs
+BuildRequires: subversion 
+BuildRequires: subversion-tools
+BuildRequires: cvs 
+BuildRequires: rcs
+Requires: python 
+Requires: subversion 
+BuildRequires: subversion-tools
+Requires: cvs	
+BuildRequires: rcs
  
-BuildArch:	noarch 
+BuildArch: noarch 
 
 %description
 cvs2svn aims to allows you to convert a CVS repository to 
@@ -47,7 +50,7 @@ nice -n 10 ./run-tests.py -v
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/%{_bindir}/
-cp %name verify-cvs2svn %{buildroot}/%{_bindir}/
+cp %name verify-cvs2svn.py %{buildroot}/%{_bindir}/
 
 mkdir -p %{buildroot}/%{py_sitedir}/
 cp -r cvs2svn_rcsparse %{buildroot}/%{py_sitedir}/
