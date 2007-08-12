@@ -4,7 +4,7 @@
 
 Name: cvs2svn
 Version: 1.5.1
-Release: %mkrel 1
+Release: %mkrel 2
 License: BSD
 Group: Development/Other
 Summary: Convert CVS repositories to Subversion repositories
@@ -12,16 +12,16 @@ Source0: http://cvs2svn.tigris.org/files/documents/1462/15996/%{name}-%{version}
 Url: http://cvs2svn.tigris.org/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: locales-en
-BuildRequires: python 
 BuildRequires: subversion 
 BuildRequires: subversion-tools
 BuildRequires: cvs 
 BuildRequires: rcs
+%py_requires 
 Requires: python 
 Requires: subversion 
-BuildRequires: subversion-tools
+Requires: subversion-tools
 Requires: cvs	
-BuildRequires: rcs
+Requires: rcs
  
 BuildArch: noarch 
 
@@ -35,28 +35,8 @@ The software is still in beta stage, so use it to your own risk.
 %prep
 %setup -q
 
-%build
-
-%check
-# needed for testing
-LANG=en_US.UTF-8
-export LANG
-unset LANGUAGE LC_MESSAGES
-# better error reporting in case of problem
-# running without nice make test fails, on os.wait()
-# because my computer is too fast ( amd 64 2 ghz ) 
-nice -n 10 ./run-tests.py -v
-
 %install
-rm -rf %{buildroot}
-mkdir -p %{buildroot}/%{_bindir}/
-cp %name verify-cvs2svn.py %{buildroot}/%{_bindir}/
-
-mkdir -p %{buildroot}/%{py_sitedir}/
-cp -r cvs2svn_rcsparse %{buildroot}/%{py_sitedir}/
-
-mkdir -p %{buildroot}/%{_mandir}/man1
-cp %{name}.1 %{buildroot}/%{_mandir}/man1/
+make DESTDIR=%buildroot install
 
 %clean
 rm -rf %{buildroot}
@@ -65,7 +45,6 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc BUGS COMMITTERS COPYING HACKING README www/
 %attr(0755,root,root) %{_bindir}/*
-%{_mandir}/man1/*
-%{py_sitedir}/cvs2svn_rcsparse
+%{py_sitedir}/*
 
 
