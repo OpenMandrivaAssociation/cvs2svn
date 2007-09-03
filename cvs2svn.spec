@@ -15,6 +15,7 @@ BuildRequires: subversion
 BuildRequires: subversion-tools
 BuildRequires: cvs 
 BuildRequires: rcs
+BuildRequires: python-devel
 %py_requires 
 Requires: python 
 Requires: subversion 
