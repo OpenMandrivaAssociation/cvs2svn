@@ -1,6 +1,6 @@
 %define name	cvs2svn
-%define version	1.3.1
-%define release	%mkrel 3
+%define version	2.0.0
+%define release	%mkrel 1
 
 Name: cvs2svn
 Version: 1.5.1
