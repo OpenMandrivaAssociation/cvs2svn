@@ -1,5 +1,5 @@
 %define name	cvs2svn
-%define version	2.0.0
+%define version	2.0.1
 %define release	%mkrel 1
 
 Name: %{name}
@@ -11,22 +11,22 @@ Summary: Convert CVS repositories to Subversion repositories
 Url: http://cvs2svn.tigris.org/
 Source0: http://cvs2svn.tigris.org/files/documents/1462/39396/%{name}-%{version}.tar.gz
 BuildRequires: locales-en
-BuildRequires: subversion 
+BuildRequires: subversion
 BuildRequires: subversion-tools
-BuildRequires: cvs 
+BuildRequires: cvs
 BuildRequires: rcs
 BuildRequires: python-devel
-%py_requires 
-Requires: python 
-Requires: subversion 
+%py_requires
+Requires: python
+Requires: subversion
 Requires: subversion-tools
-Requires: cvs	
+Requires: cvs
 Requires: rcs
-BuildArch: noarch 
+BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}
 
 %description
-cvs2svn aims to allows you to convert a CVS repository to 
+cvs2svn aims to allows you to convert a CVS repository to
 a Subversion one. This work for complete conversion, not a synchronisation
 for each commit.
 
