@@ -23,7 +23,6 @@ Requires: subversion-tools
 Requires: cvs
 Requires: rcs
 BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}
 
 %description
 cvs2svn aims to allows you to convert a CVS repository to
