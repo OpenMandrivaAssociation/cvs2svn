@@ -1,6 +1,6 @@
 %define name	cvs2svn
-%define version	2.1.0
-%define release	%mkrel 3
+%define version	2.1.1
+%define release	%mkrel 1
 
 Name: %{name}
 Version: %{version}
