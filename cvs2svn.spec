@@ -1,5 +1,5 @@
 %define name	cvs2svn
-%define version	2.2.0
+%define version	2.3.0
 %define release	%mkrel 1
 
 Name: %{name}
@@ -7,9 +7,9 @@ Version: %{version}
 Release: %{release}
 License: BSD
 Group: Development/Other
-Summary: Convert CVS repositories to Subversion or Git repositories
+Summary: Convert CVS repositories to Subversion, Git or Bazaar repositories
 Url: http://cvs2svn.tigris.org/
-Source0: http://cvs2svn.tigris.org/files/documents/1462/39396/%{name}-%{version}.tar.gz
+Source0: %{name}-%{version}.tar.gz
 BuildRequires: locales-en
 BuildRequires: subversion
 BuildRequires: subversion-tools
@@ -26,9 +26,9 @@ BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}
 
 %description
-cvs2svn is a tool for migrating a CVS repository to Subversion or Git.
-It does a complete conversion; cvs2svn is not usable for keeping a
-synchronised CVS and Subversion or Git repository.
+cvs2svn is a tool for migrating a CVS repository to Subversion Git
+or Bazaar. It does a complete conversion; cvs2svn is not usable for
+keeping a synchronised CVS and Subversion, Git or Bazaar repository.
 
 %prep
 %setup -q
