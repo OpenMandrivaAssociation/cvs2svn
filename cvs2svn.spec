@@ -30,11 +30,16 @@ keeping a synchronised CVS and Subversion, Git or Bazaar repository.
 
 %build
 python setup.py build
+%make man
 
 %install
 %makeinstall_std
+for manpage in *.1; do
+	install -m644 -p $manpage -D %{buildroot}%{_mandir}/man1/$manpage
+done
 
 %files
 %doc BUGS COMMITTERS COPYING HACKING README www/
 %{_bindir}/*
 %{py_sitedir}/*
+%{_mandir}/man1/*.1*
