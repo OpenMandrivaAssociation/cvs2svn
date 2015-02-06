@@ -1,6 +1,6 @@
 Name:		cvs2svn
 Version:	2.4.0
-Release:	1
+Release:	2
 License:	BSD
 Group:		Development/Other
 Summary:	Convert CVS repositories to Subversion, Git or Bazaar repositories
