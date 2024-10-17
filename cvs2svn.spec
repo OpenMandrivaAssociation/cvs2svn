@@ -4,7 +4,7 @@ Release:	2
 License:	BSD
 Group:		Development/Other
 Summary:	Convert CVS repositories to Subversion, Git or Bazaar repositories
-Url:		http://cvs2svn.tigris.org/
+Url:		https://cvs2svn.tigris.org/
 Source0:	http://cvs2svn.tigris.org/files/documents/1462/49237/%{name}-%{version}.tar.gz
 BuildRequires:	locales-en
 BuildRequires:	subversion
