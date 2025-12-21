@@ -6,6 +6,7 @@ Group:		Development/Other
 Summary:	Convert CVS repositories to Subversion, Git or Bazaar repositories
 Url:		https://cvs2svn.tigris.org/
 Source0:	http://cvs2svn.tigris.org/files/documents/1462/49237/%{name}-%{version}.tar.gz
+BuildRequires:	make
 BuildRequires:	locales-en
 BuildRequires:	subversion
 BuildRequires:	subversion-tools
